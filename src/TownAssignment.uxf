@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <help_text/>
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>850</x>
+      <y>430</y>
+      <w>150</w>
+      <h>165</h>
+    </coordinates>
+    <panel_attributes>::Town
+--
+-name: String
+-adjacentTowns: Set&lt;Town&gt;
+-distancefromRoot: int
+--
++Town(String name): ctor
++Town(Town templateTown): ctor
++getName(): String
++getDistanceFromRoot(): int
++setName(String name): void
++setDistanceFromRoot(int distance): void
++getAdjacentTowns(): Set&lt;Town&gt;
++addAdjacentTown(Town town): void
++removeAdjacentTown(Town town): Boolean
++compareTo(Town o): int
++hashCode(): int
++equals(Object obj): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>265</x>
+      <y>290</y>
+      <w>305</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>::TownGraph
+--
+-adjacencyList: Map&lt;Town, LinkedList&lt;Road&gt;&gt;
+-shortestPath: HashMap&lt;Town, Pair&lt;Integer, Town&gt;&gt;
+--
++TownGraph(): ctor
++getTown(Town town): Town
++getEdge(Town sourceVertex, Town destinationVertex): Road
++addEdge(Town sourceVertex, Town destinationVertex, int weight, String description): Road
++addVertex(Town v): boolean
++containsEdge(Town sourceVertex, Town destinationVertex): boolean
++containsVertex(Town v): boolean
++edgeSet(): Set&lt;Road&gt;
++edgesOf(Town vertex): Set&lt;Road&gt;
++removeEdge(Town sourceVertex, Town destinationVertex, int weight, String description): Road
++removeVertex(Town v): boolean
++vertexSet(): Set&lt;Town&gt;
++shortestPath(Town sourceVertex, Town destinationVertex): ArrayList&lt;String&gt;
++dijkstraShortestPath(Town sourceVertex): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>35</x>
+      <y>450</y>
+      <w>245</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>::TownGraphManager
+--
+-townGraph: TownGraph
+--
++TownGraphManager(): ctor
++populateTownGraph(File file): boolean
++addRoad(String town1, String town2, int weight, String roadName): boolean
++getRoad(String town1, String town2): String
++addTown(String v): boolean
++containsTown(String v): boolean
++containsRoadConnection(String town1, String town2): boolean
++allRoads(): ArrayList&lt;String&gt;
++deleteRoadConnection(String town1, String town2, String road): boolean
++deleteTown(String v): boolean
++allTowns(): ArrayList&lt;String&gt;
++getPath(String town1, String town2): ArrayList&lt;String&gt;
++getTown(String string): Town
++getPathSets(String town1, String town2): ArrayList&lt;String&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>85</y>
+      <w>250</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+::TownGraphManagerInterface
+--
+--
++addRoad(String town1, String town2, int weight, String roadName): boolean
++getRoad(String town1, String town2): String
++addTown(String v): boolean
++getTown(String name): Town
++containsTown(String v): boolean
++containsRoadConnection(String town1, String town2): boolean
++allRoads(): ArrayList&lt;String&gt;
++deleteRoadConnection(String town1, String town2, String road): boolean
++deleteTown(String v): boolean
++allTowns(): ArrayList&lt;String&gt;
++getPathSets(String town1, String town2): ArrayList&lt;String&gt;
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>25</x>
+      <y>70</y>
+      <w>270</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+::GraphInterface
+--
+--
++getEdge(V sourceVertex, V destinationVertex): E
++addEdge(V sourceVertex, V destinationVertex, int weight, String description): E
++addVertex(V v): boolean
++containsEdge(V sourceVertex, V destinationVertex): boolean
++containsVertex(V v): boolean
++edgeSet(): Set&lt;E&gt;
++edgesOf(V vertex): Set&lt;E&gt;
++removeEdge(V sourceVertex, V destinationVertex, int weight, String description): E
++removeVertex(V v): boolean
++vertexSet(): Set&lt;V&gt;
++shortestPath(V sourceVertex, V destinationVertex): ArrayList&lt;String&gt;
++dijkstraShortestPath(V sourceVertex): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>575</x>
+      <y>430</y>
+      <w>245</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>::Road
+--
+-source: Town
+-destination: Town
+-distance: int
+-roadName: String
+--
++Road(Town source, Town destination, int distance, String roadName): ctor
++Road(Town source, Town destination, String roadName): ctor
++contains(Town town): boolean
++getName(): String
++getDestination(): Town
++getSource(): Town
++getWeight(): int
++setName(String name): void
++setSource(Town source): void
++setDestination(Town destination): void
++setWeight(int distance): void
++equals(Object r): boolean
++hashCode(): int
++compareTo(Road o): int
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>205</y>
+      <w>15</w>
+      <h>255</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;490.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>210</y>
+      <w>15</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>290</y>
+      <w>145</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+::Comparable
+--
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>330</y>
+      <w>120</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>220.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>330</y>
+      <w>115</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;210.0;200.0</additional_attributes>
+  </element>
+</diagram>

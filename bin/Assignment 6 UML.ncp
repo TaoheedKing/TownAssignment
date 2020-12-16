@@ -1,0 +1,48 @@
+<Project>
+  <Name>Untitled</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Assignment 6</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Comment">
+        <Text>Nimesh Fernando - Assingment 6</Text>
+        <Location left="468" top="57" />
+        <Size width="253" height="50" />
+      </Entity>
+      <Entity type="Class">
+        <Name>Town</Name>
+        <Access>Public</Access>
+        <Location left="101" top="190" />
+        <Size width="189" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">Town(java.lang.String name)</Member>
+        <Member type="Constructor">Town(Town templateTown)</Member>
+        <Member type="Method">public int compareTo(Town o)</Member>
+        <Member type="Method">boolean equals(java.lang.Object obj)</Member>
+        <Member type="Method">java.lang.String getName()</Member>
+        <Member type="Method">int hashCode()</Member>
+        <Member type="Method">java.lang.String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Road</Name>
+        <Access>Public</Access>
+        <Location left="378" top="190" />
+        <Size width="471" height="258" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">Road(Town source, Town destination, int degrees, java.lang.String name)</Member>
+        <Member type="Constructor">Road(Town source, Town destination, java.lang.String name)</Member>
+        <Member type="Method">int compareTo(Road o)</Member>
+        <Member type="Method">boolean contains(Town town)</Member>
+        <Member type="Method">boolean equals(java.lang.Object r)</Member>
+        <Member type="Method">Town getDestination()</Member>
+        <Member type="Method">java.lang.String getName()</Member>
+        <Member type="Method">Town getSource()</Member>
+        <Member type="Method">int getWeight()</Member>
+        <Member type="Method">java.lang.String toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships />
+  </ProjectItem>
+</Project>
