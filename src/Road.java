@@ -1,7 +1,7 @@
 import java.util.Objects;
 
 /**
- * @author Nimesh Fernando
+ * @author Taoheed King
  *
  */
 public class Road implements Comparable<Road> {

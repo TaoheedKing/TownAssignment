@@ -2,7 +2,7 @@ import java.util.*;
 
 /**
  * 
- * @author Nimesh Fernando
+ * @author Taoheed King
  *
  */
 public class Town implements Comparable<Town> {

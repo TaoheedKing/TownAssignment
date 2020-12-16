@@ -9,7 +9,7 @@ import javafx.scene.shape.Path;
 
 /**
  * data manager class that contains a graph
- * @author Nimesh Fernando
+ * @author Taoheed King
  *
  */
 public class TownGraphManager implements TownGraphManagerInterface{
